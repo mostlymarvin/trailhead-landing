@@ -1,0 +1,72 @@
+@use "theme/variables" as var;
+
+/* Modern CSS Reset by Andy Bell, see https://github.com/hankchizljaw/modern-css-reset/blob/master/dist/reset.css */
+/* Box sizing rules */
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+*:focus {
+ outline: none; 
+}
+.user-is-tabbing *:focus {
+	background-color: var( --highlight );
+	color: var(--white );
+}
+/* Remove default padding */
+ol[class],
+ul[class] {
+	//padding: 0;
+}
+/* Remove default margin */
+blockquote,
+body,
+dd,
+dl,
+figure,
+h1,
+h2,
+h3,
+h4,
+ol,
+p,
+ul {
+	//margin: unset;
+}
+/* Remove list styles on ul, ol elements with a class attribute */
+ol[class],
+ul[class] {
+	//list-style: none;
+}
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+}
+/* Make images easier to work with */
+img {
+	height   : auto;
+	max-width: 100%;
+}
+
+/* Inherit fonts for inputs and buttons */
+button,
+input,
+select,
+textarea {
+	font: inherit;
+}
+
+/* For IE11, which doesn't assume this */
+main {
+	display: block;
+}
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation-duration       : 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration      : 0.01ms !important;
+		scroll-behavior          : auto !important;
+	}
+}

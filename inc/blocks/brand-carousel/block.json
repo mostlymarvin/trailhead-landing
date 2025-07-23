@@ -1,0 +1,80 @@
+{
+  "name": "acf/brand-carousel",
+  "title": "Brand Carousel",
+  "description": "Displays a carousel of brands",
+  "version": "1.0.1",
+  "style": [
+    "file:./block.min.css"
+  ],
+  "viewStyle": [
+    "file:./block.min.css"
+  ],
+  "category": "formatting",
+  "icon": "format-gallery",
+  "keywords": [
+    "carousel",
+    "slick",
+    "brand"
+  ],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "./block.php"
+  },
+  "supports": {
+    "align": true,
+    "html": false,
+    "jsx": true,
+    "anchor": true,
+    "color": {
+      "text": true,
+      "background": true
+    },
+    "alignText": true,
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "script": [
+    "jquery",
+    "file:./slick.js",
+    "file:./slick-slider.js"
+  ],
+  "attributes": {
+    "select_brands": {
+      "type": "array",
+      "default": []
+      },
+    "show_brand_name": {
+      "type": "boolean",
+      "default": "false"
+    },
+    "show_brand_logo": {
+      "type": "boolean",
+      "default": "true"
+    },
+    "slides_to_show": {
+      "type": "number"
+    },
+    "brand_name_position": {
+      "type": "enum",
+      "default": "center"
+    },
+    "hide_name_unless": {
+      "type": "boolean",
+      "default": "false"
+    },
+    "link_brand_to": {
+      "type": "enum"
+    },
+    "link_target": {
+      "type" : "enum"
+    },
+    "backgroundColor" : {
+      "type" : "string"
+    },
+    "textColor" : {
+      "type" : "string"
+    }
+  }
+}

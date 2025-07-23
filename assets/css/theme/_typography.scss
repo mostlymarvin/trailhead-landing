@@ -1,0 +1,94 @@
+@use "theme/variables" as var;
+
+/**
+ * Universal special classes.
+ * 
+ * Faux Headings
+ */
+.h1 {
+  @include var.thl_h1;
+}
+.h2 {
+  @include var.thl_h2;
+}
+.h3 {
+  @include var.thl_h3;
+}
+.h4 {
+  @include var.thl_h4;
+}
+.h5 {
+  @include var.thl_h5;
+}
+.h6 {
+  @include var.thl_h6;
+}
+
+/**
+ * Universal special classes.
+ * 
+ * Font sizes - shortcut classes
+ */
+.font_base {
+  font-size: var( --wp--preset--font-size--base ) !important;
+}
+.font_xx-small {
+  font-size: var( --wp--preset--font-size--xx-small ) !important;
+}
+.font_extra-small {
+  font-size: var( --wp--preset--font-size--extra-small ) !important;
+}
+.font_small {
+  font-size: var( --wp--preset--font-size--small ) !important;
+}
+.font_medium {
+  font-size: var( --wp--preset--font-size--medium ) !important;
+}
+.font_medium-plus {
+  font-size: var( --wp--preset--font-size--medium-plus ) !important;
+}
+.font_large {
+  font-size: var( --wp--preset--font-size--large ) !important;
+}
+.font_x-large {
+  font-size: var( --wp--preset--font-size--x-large ) !important;
+}
+.font_xx-large {
+  font-size: var( --wp--preset--font-size--xx-large ) !important;
+}
+
+/**
+ * Universal special classes.
+ * 
+ * Font families - shortcut classes
+ */
+.lora {
+  @include var.thl_lora;
+}
+
+/**
+ * Universal special classes.
+ * 
+ * Styles
+ */
+.i {
+  @include var.thl_i;
+}
+.norm {
+  font-style: normal !important;
+}
+.no-underline, .no-underline > * {
+  text-decoration:none !important;
+}
+sup {
+  font-size: 75% !important;
+  line-height:75% !important;
+}
+
+ 
+
+
+
+  
+
+

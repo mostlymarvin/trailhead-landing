@@ -1,0 +1,63 @@
+.wp-block-template-part {
+  margin-top:0 !important;
+}
+
+.big-f-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100%;
+  height: 700px;
+  overflow: hidden;
+
+  // Adjust height if the admin bar is present
+  body.admin-bar & {
+    height: calc(700px + var(--wp-admin--admin-bar--height));
+  }
+
+  figure.big-f {
+    position: absolute;
+    /* Define the top pos of big-f as a CSS var for js anim */
+    body.home & {
+      --big-f-top: 52%;
+    }
+    body.marketing-communications & {
+      --big-f-top: 54%;
+    }
+    body.corporate-communications & {
+      --big-f-top: 51%;
+    }
+    top: var(--big-f-top);
+    
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    transform-origin: center;
+    transition: transform 0.1s ease;
+    img {
+      display: block;
+      width: 150px;
+      height: auto;
+      @media (max-width: 600px) {
+        width: 100px !important;
+        height: auto;
+      }
+    }
+  }
+  
+}
+
+body.home .breadcrumbs-container { display: none; }
+
+main .wp-block-search__button {
+  border-radius: 22px;
+  border: none;
+  padding: var(--wp--preset--spacing--10) var(--wp--preset--spacing--20);
+}
+main .wp-block-search__input {
+  border-radius: 22px;
+}
+
+//no other clients other than Landings and can't get the carousel pattern to edit in admin to assign a class
+//to the "Proud to have worked..." para before the carousel
+body.residential-retirement-living p.has-montserrat-font-family.has-small-font-size { display: none !important; }

@@ -1,0 +1,7 @@
+@use "theme/variables" as var;
+
+//Accordion
+.c-accordion__title:after {
+  color: var(--wp--preset--color--primary);
+  font-weight:600;
+}

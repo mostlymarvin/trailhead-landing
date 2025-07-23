@@ -1,0 +1,18 @@
+@use "../theme/variables" as var;
+
+// Accordion block which appears on Services Pages.
+.lightweight-accordion {
+
+  .lightweight-accordion-title{
+    h3 {
+      @include var.accordion-heading;
+    }
+  }
+
+  summary {
+    &::marker {
+      color: var( --wp--preset--color--primary ) !important;
+    }
+  }
+
+}

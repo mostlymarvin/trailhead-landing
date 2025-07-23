@@ -1,0 +1,40 @@
+/*!
+Theme Name: Falls Co
+Author: Falls Co
+Author URI: https://fallsandco.com
+Theme URI: https://fallsandco.com
+Tags: full-site-sediting, editor-style, block-styles, block-patterns
+Text Domain: falls-co
+Requires at least: 6.3
+Requires PHP: 7.4
+Tested up to: 6.3
+Version: 1.0.57
+
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+@use 'theme/reset';
+@use "theme/base";
+@use "theme/layout";
+@use 'theme/alignment';
+@use 'theme/block_sizes';
+
+@use 'theme/typography';
+
+//@use 'theme/icons';
+//@use 'theme/media';
+//@use "theme/header";
+//@use "theme/blog";
+//@use "theme/related-posts";
+//@use "theme/forms";
+
+//@use "theme/slick";
+//@use "theme/slick-theme";
+//@use "theme/accordion";
+
+//@use "theme/breadcrumbs";
+//@use "theme/zindex";
+
+//@use "theme/footer";
+
+//@use "theme/media-queries";

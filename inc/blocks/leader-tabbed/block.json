@@ -1,0 +1,103 @@
+{
+  "name": "acf/leader-tabbed",
+  "title": "Leader: Tabbed",
+  "description": "Displays a leader with tabbed output",
+  "version": "1.0.1",
+  
+  "style": [
+    "file:./block.min.css"
+  ],
+  "viewStyle": [
+    "file:./block.min.css"
+  ],
+  "category": "formatting",
+  "icon": "nametag",
+  "keywords": [
+    "carousel",
+    "slick",
+    "brand"
+  ],
+  "acf": {
+    "mode": "auto",
+    "renderTemplate": "./block.php"
+  },
+  "allowedBlocks": [
+    "core/paragraph",
+    "core/image",
+    "core/heading"
+  ],
+  "supports": {
+    "align": true,
+    "html": false,
+    "jsx": true,
+    "anchor": true,
+    "color": {
+      "text": true,
+      "background": true,
+      "heading": true,
+      "link": true
+    },
+    "alignText": true,
+    "spacing": {
+      "margin": true,
+      "padding": true
+    },
+    "dimensions": {
+      "minHeight": true
+    },
+    "typography": {
+      "fontSize": true
+    },
+    "selectors": {
+      "typography": {
+        "fontStyle": true
+      }
+    }
+  },
+  "script": [
+    "jquery",
+    "jquery-ui-tabs",
+    "file:./tabs.js"
+  ],
+  "attributes": {
+    "leader_name": {
+      "type": "string"
+    },
+    "leader_name_tag": {
+      "type": "enum"
+    },
+    "leader_title": {
+      "type": "string"
+    },
+    "leader_title_tag": {
+      "type": "enum"
+    },
+    "leader_photo": {
+      "type": "string"
+    },
+    "tab_1_title": {
+      "type": "string"
+    },
+    "tab_1_string": {
+      "type": "string"
+    },
+    "tab_2_title": {
+      "type": "string"
+    },
+    "tab_2_string": {
+      "type": "string"
+    },
+    "tab_3_title": {
+      "type": "string"
+    },
+    "tab_3_string": {
+      "type": "string"
+    },
+    "backgroundColor": {
+      "type": "string"
+    },
+    "stringColor": {
+      "type": "string"
+    }
+  }
+}

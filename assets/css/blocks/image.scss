@@ -1,0 +1,20 @@
+
+.wp-block-group.is-layout-grid {
+  > .wp-block-image {
+    > div {
+      height:100%;
+      width:100%;
+    }
+    img {
+      height:100% !important;
+      width:100% !important;
+     //object-fit:scale-down;
+
+     // object-fit: cover !important;    
+    } 
+
+    &.contain img {
+     // object-fit: contain !important;
+    }
+  } 
+}

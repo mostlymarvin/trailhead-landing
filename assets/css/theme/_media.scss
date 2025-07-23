@@ -1,0 +1,22 @@
+@use "theme/variables" as var;
+
+@media (min-width: calc( var.$mobile + 1px ) ) {
+  .hide-desktop {
+      display: none !important;
+  }
+
+  .hide-mobile {
+      display: block;
+  }
+}
+@media (max-width: var.$mobile ) {
+
+  .hide-mobile,
+  .hide-img-mobile img {
+      display: none;
+  }
+
+  .hide-desktop {
+      display: block;
+  }
+}

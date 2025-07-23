@@ -1,0 +1,90 @@
+{
+  "name": "acf/page-navigation",
+  "title": "Page Navigation",
+  "description": "Displays a grid or list of child pages or taxonomy terms, with options.",
+  "version": "1.0.1",
+  "style": [
+    "file:./block.min.css"
+  ],
+  "viewStyle": [
+    "file:./block.min.css"
+  ],
+  "category": "theme",
+  "icon": "admin-links",
+  "keywords": [
+    "navigation",
+    "page",
+    "grid",
+    "links"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "./block.php"
+  },
+  "supports": {
+    "align": true,
+    "html": false,
+    "jsx": true,
+    "anchor": true,
+    "color": {
+      "text": true,
+      "background": true
+    },
+    "alignText": true,
+    "spacing": {
+      "margin": true,
+      "padding": true
+    },
+    "dimensions": {
+      "minHeight": true
+    },
+    "layout": {
+      "default": {
+        "contentSize": "1140px",
+        "wideSize": "1400px"
+      }
+    }
+  },
+  "attributes": {
+    "backgroundColor": {
+      "type": "string"
+    },
+    "columns": {
+      "type": "number"
+    },
+    "display_as": {
+      "type": "enum"
+    },
+    "grid_spacing_row_gap": {
+      "type": "number"
+    },
+    "grid_spacing_column_gap": {
+      "type": "number"
+    },
+    "post_parent": {
+      "type": "number"
+    },
+    "pull_item_options_from": {
+      "type": "enum"
+    },
+    "show_titles": {
+      "type": "enum"
+    },
+    "taxonomy_slug": {
+      "type": "string"
+    },
+    "taxonomy_terms": {
+      "type": "array"
+    },
+    "textColor": {
+      "type": "string",
+      "default": "primary"
+    },
+    "max_title_units" : {
+      "type" : "enum"
+    },
+    "max_title_width" : {
+      "type" : "number" 
+    }
+  }
+}

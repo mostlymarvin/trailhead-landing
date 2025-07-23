@@ -1,0 +1,491 @@
+/** MIXINS - keep in this file for easier imports to other files. */
+/* Modern CSS Reset by Andy Bell, see https://github.com/hankchizljaw/modern-css-reset/blob/master/dist/reset.css */
+/* Box sizing rules */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+.user-is-tabbing *:focus {
+  background-color: var(--highlight);
+  color: var(--white);
+}
+
+/* Remove default padding */
+/* Remove default margin */
+/* Remove list styles on ul, ol elements with a class attribute */
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+/* Inherit fonts for inputs and buttons */
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+/* For IE11, which doesn't assume this */
+main {
+  display: block;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* Styles intended only for the front.*/
+html {
+  scroll-behavior: smooth;
+  font-size: 10px !important; /* Easier Math */
+}
+
+body {
+  font-size: 1.4rem;
+}
+
+body, body * {
+  box-sizing: border-box;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wp-block-template-part {
+  margin-top: 0 !important;
+}
+
+.big-f-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100%;
+  height: 700px;
+  overflow: hidden;
+}
+body.admin-bar .big-f-container {
+  height: calc(700px + var(--wp-admin--admin-bar--height));
+}
+.big-f-container figure.big-f {
+  position: absolute;
+  /* Define the top pos of big-f as a CSS var for js anim */
+  top: var(--big-f-top);
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transform-origin: center;
+  transition: transform 0.1s ease;
+}
+body.home .big-f-container figure.big-f {
+  --big-f-top: 52%;
+}
+body.marketing-communications .big-f-container figure.big-f {
+  --big-f-top: 54%;
+}
+body.corporate-communications .big-f-container figure.big-f {
+  --big-f-top: 51%;
+}
+.big-f-container figure.big-f img {
+  display: block;
+  width: 150px;
+  height: auto;
+}
+@media (max-width: 600px) {
+  .big-f-container figure.big-f img {
+    width: 100px !important;
+    height: auto;
+  }
+}
+
+body.home .breadcrumbs-container {
+  display: none;
+}
+
+main .wp-block-search__button {
+  border-radius: 22px;
+  border: none;
+  padding: var(--wp--preset--spacing--10) var(--wp--preset--spacing--20);
+}
+
+main .wp-block-search__input {
+  border-radius: 22px;
+}
+
+body.residential-retirement-living p.has-montserrat-font-family.has-small-font-size {
+  display: none !important;
+}
+
+@media (max-width: 876px) {
+  .aligncenter,
+  .alignleft,
+  .alignright {
+    display: block !important;
+    float: none !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center;
+  }
+}
+.minht100,
+.minht100 * {
+  min-height: 100px;
+}
+
+.maxht100,
+.maxht100 * {
+  max-height: 100px !important;
+  display: block;
+}
+
+img.maxht100,
+.maxht100 img {
+  width: auto !important;
+  max-height: 100px !important;
+  display: inline-block;
+}
+
+.maxht100 .has-text-align-center img,
+.maxht100 .aligncenter img {
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+.minht150,
+.minht150 * {
+  min-height: 150px;
+}
+
+.maxht150,
+.maxht150 * {
+  max-height: 150px !important;
+  display: block;
+}
+
+img.maxht150,
+.maxht150 img {
+  width: auto !important;
+  max-height: 150px !important;
+  display: inline-block;
+}
+
+.maxht150 .has-text-align-center img,
+.maxht150 .aligncenter img {
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+.minht200,
+.minht200 * {
+  min-height: 200px;
+}
+
+.maxht200,
+.maxht200 * {
+  max-height: 200px !important;
+  display: block;
+}
+
+img.maxht200,
+.maxht200 img {
+  width: auto !important;
+  max-height: 200px !important;
+  display: inline-block;
+}
+
+.maxht200 .has-text-align-center img,
+.maxht200 .aligncenter img {
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+.minht250,
+.minht250 * {
+  min-height: 250px;
+}
+
+.maxht250,
+.maxht250 * {
+  max-height: 250px !important;
+  display: block;
+}
+
+img.maxht250,
+.maxht250 img {
+  width: auto !important;
+  max-height: 250px !important;
+  display: inline-block;
+}
+
+.maxht250 .has-text-align-center img,
+.maxht250 .aligncenter img {
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+.minht300,
+.minht300 * {
+  min-height: 300px;
+}
+
+.maxht300,
+.maxht300 * {
+  max-height: 300px !important;
+  display: block;
+}
+
+img.maxht300,
+.maxht300 img {
+  width: auto !important;
+  max-height: 300px !important;
+  display: inline-block;
+}
+
+.maxht300 .has-text-align-center img,
+.maxht300 .aligncenter img {
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+.minht350,
+.minht350 * {
+  min-height: 350px;
+}
+
+.maxht350,
+.maxht350 * {
+  max-height: 350px !important;
+  display: block;
+}
+
+img.maxht350,
+.maxht350 img {
+  width: auto !important;
+  max-height: 350px !important;
+  display: inline-block;
+}
+
+.maxht350 .has-text-align-center img,
+.maxht350 .aligncenter img {
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+.minht400,
+.minht400 * {
+  min-height: 400px;
+}
+
+.maxht400,
+.maxht400 * {
+  max-height: 400px !important;
+  display: block;
+}
+
+img.maxht400,
+.maxht400 img {
+  width: auto !important;
+  max-height: 400px !important;
+  display: inline-block;
+}
+
+.maxht400 .has-text-align-center img,
+.maxht400 .aligncenter img {
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+.minht450,
+.minht450 * {
+  min-height: 450px;
+}
+
+.maxht450,
+.maxht450 * {
+  max-height: 450px !important;
+  display: block;
+}
+
+img.maxht450,
+.maxht450 img {
+  width: auto !important;
+  max-height: 450px !important;
+  display: inline-block;
+}
+
+.maxht450 .has-text-align-center img,
+.maxht450 .aligncenter img {
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+.minht500,
+.minht500 * {
+  min-height: 500px;
+}
+
+.maxht500,
+.maxht500 * {
+  max-height: 500px !important;
+  display: block;
+}
+
+img.maxht500,
+.maxht500 img {
+  width: auto !important;
+  max-height: 500px !important;
+  display: inline-block;
+}
+
+.maxht500 .has-text-align-center img,
+.maxht500 .aligncenter img {
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+.mt0 {
+  margin-top: 0 !important;
+}
+
+/**
+ * Universal special classes.
+ * 
+ * Faux Headings
+ */
+.h1 {
+  font-size: var(--wp--preset--font-size--x-large) !important;
+  font-weight: 300;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.h2 {
+  font-size: var(--wp--preset--font-size--large) !important;
+  font-weight: 300;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.h3 {
+  font-size: var(--wp--preset--font-size--medium-plus) !important;
+  font-weight: 500;
+  text-transform: 0.76px;
+  letter-spacing: uppercase;
+}
+
+.h4 {
+  font-size: var(--wp--preset--font-size--medium) !important;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.h5 {
+  font-size: var(--wp--preset--font-size--small) !important;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.h6 {
+  font-size: var(--wp--preset--font-size--xx-small) !important;
+  font-weight: 500;
+  text-transform: 0.76px;
+  letter-spacing: uppercase;
+}
+
+/**
+ * Universal special classes.
+ * 
+ * Font sizes - shortcut classes
+ */
+.font_base {
+  font-size: var(--wp--preset--font-size--base) !important;
+}
+
+.font_xx-small {
+  font-size: var(--wp--preset--font-size--xx-small) !important;
+}
+
+.font_extra-small {
+  font-size: var(--wp--preset--font-size--extra-small) !important;
+}
+
+.font_small {
+  font-size: var(--wp--preset--font-size--small) !important;
+}
+
+.font_medium {
+  font-size: var(--wp--preset--font-size--medium) !important;
+}
+
+.font_medium-plus {
+  font-size: var(--wp--preset--font-size--medium-plus) !important;
+}
+
+.font_large {
+  font-size: var(--wp--preset--font-size--large) !important;
+}
+
+.font_x-large {
+  font-size: var(--wp--preset--font-size--x-large) !important;
+}
+
+.font_xx-large {
+  font-size: var(--wp--preset--font-size--xx-large) !important;
+}
+
+/**
+ * Universal special classes.
+ * 
+ * Font families - shortcut classes
+ */
+.lora {
+  font-family: var(--wp--preset--font-family--lora) !important;
+}
+
+/**
+ * Universal special classes.
+ * 
+ * Styles
+ */
+.i {
+  font-style: italic !important;
+}
+
+.norm {
+  font-style: normal !important;
+}
+
+.no-underline, .no-underline > * {
+  text-decoration: none !important;
+}
+
+sup {
+  font-size: 75% !important;
+  line-height: 75% !important;
+}

@@ -1,0 +1,12 @@
+@for $i from 0 through 100 {
+
+  .z#{$i} {
+    z-index: $i !important;
+  }
+
+}
+
+.rel {
+  position: relative !important;
+}
+

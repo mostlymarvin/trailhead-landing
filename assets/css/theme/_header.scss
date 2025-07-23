@@ -1,0 +1,100 @@
+@use "theme/variables" as var;
+
+.site-header {
+  position:relative;
+  z-index:200 !important;
+}
+.wp-site-blocks {
+  padding-top: 0;
+}
+
+//header css at top of pages with featured img heros
+.is-position-sticky .header-container {
+  //background-color: transparent;
+  background: linear-gradient(to bottom, rgba(15, 54, 75, 0.53) 0%, rgba(15, 54, 75, 0) 100%);
+  transition: background 0.3s ease;
+
+  .custom-logo {
+    filter: brightness(0) invert(1); //white
+    transition: filter 0.3s ease;
+  }
+
+  .wp-block-navigation__container > *, .wp-block-navigation__responsive-container-open { 
+    color: white !important;
+  }
+  .wp-block-search.wp-block-search__button-only .wp-block-search__button svg {
+    fill: white !important;
+  }
+
+  @media all and ( min-width: calc(var.$large + 1px) ) {
+    ul.wp-block-navigation__submenu-container:before {
+      height: 0px !important;
+    }
+  }
+}
+
+.is-position-sticky.scrolled .header-container {
+  background: white;
+  border-bottom: 1px solid #979797;
+
+  .custom-logo {
+    filter: none; //not white
+  }
+
+  .wp-block-navigation__container > *, .wp-block-navigation__responsive-container-open { 
+    color: inherit !important;
+  }
+  .wp-block-search.wp-block-search__button-only .wp-block-search__button svg {
+    fill: #525252 !important;
+  }
+
+  @media all and ( min-width: calc(var.$large + 1px) ) {
+    ul.wp-block-navigation__submenu-container:before {
+      height: 25px !important;
+    }
+  }
+}
+
+// Always show nav on pages with no cover section, or a cover-section with the f-off class.
+
+:has(.f-off ) .is-position-sticky .header-container,
+.blog .is-position-sticky .header-container,
+.archive.category .is-position-sticky .header-container,
+.single-post .is-position-sticky .header-container,
+.page-template-wp-custom-template-pages-simple-header .is-position-sticky .header-container {
+  background: white;
+  border-bottom: 1px solid #979797;
+
+  .wp-block-navigation__container > *, .wp-block-navigation__responsive-container-open { 
+    color: inherit !important;
+  }
+
+  .custom-logo {
+    filter: none; //not white
+  }
+
+  .wp-block-search.wp-block-search__button-only .wp-block-search__button svg {
+    fill: #525252 !important;
+  }
+
+  @media (max-width: calc(var.$laptop )) {
+    .wp-block-search.wp-block-search__button-only .wp-block-search__button svg {
+      fill: #fff !important;
+    }
+  }
+
+  @media all and ( min-width: calc(var.$large + 1px) ) {
+    ul.wp-block-navigation__submenu-container:before {
+      height: 25px !important;
+    }
+  }
+}
+
+@media (min-width: var.$laptop) {
+  .wp-block-navigation__submenu-container {
+    min-width: 100% !important;
+    span.wp-block-navigation-item__label {
+      white-space: nowrap;
+    }
+  }
+}

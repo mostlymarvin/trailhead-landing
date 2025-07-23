@@ -1,0 +1,77 @@
+@use "../theme/variables" as var;
+
+.wp-block-cover__inner-container > * {
+    //All text in a cover should have a dropshadow
+    text-shadow: 0px 0px 3px rgba(0,0,0,0.8);
+  }
+  //except buttons...
+.wp-block-cover__inner-container .has-background,
+.wp-block-cover__inner-container .wp-block-button__link {
+    text-shadow: none;
+}
+
+body.single-work,
+body.page-template-wp-custom-template-pages-services {
+    //All Work and Services pages' hero cover should have a bottom gradient for text legibility. 
+    //Transparency of gradient depends on transparency of overlay set in page editor
+    .has-text-main-background-color {
+      background-color: transparent;
+      background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.65) 100%) !important;
+    }
+  }
+
+
+body.page-template-wp-custom-template-pages-marketing-industry, 
+body.page-template-wp-custom-template-pages-corporate-industry {
+    //All Sector pages' hero cover should have a top gradient for text legibility. 
+    //Transparency of gradient depends on transparency of overlay set in page editor
+    .wp-block-cover__background {
+        background-color: transparent;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 100%) !important;
+        @media (max-width: 480px) {
+            background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%) !important;
+        }
+    }
+}
+  
+
+//MHOMEPAGE: COVER BLOCK W HOVER EFFECT
+.wp-block-cover.feature-promo {
+
+    .wp-block-cover__background {
+        opacity: 0; // Initially hidden
+        background: linear-gradient(to top, rgba(0, 0, 0, .2) 0%, rgba(0, 0, 0, 0.65) 100%) !important;
+        transition: opacity 0.5s ease; // Smooth fade-in effect
+        @media (max-width: 600px) {
+            opacity: 1 !important; // Always visible on smaller screens
+            transition: none;
+        }
+    }
+    .wp-block-cover__inner-container {  
+      p, h3 {
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(-20px); // Initially slightly above normal position
+        transition: opacity 0.5s ease, transform 0.5s ease; 
+        @media (max-width: 600px) {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+        }
+      }
+    }
+  }
+  
+  .wp-block-cover.feature-promo:hover {
+    .wp-block-cover__background {
+        opacity: 1;
+        background-color: transparent;
+        background: linear-gradient(to top, rgba(0, 0, 0, .2) 0%, rgba(0, 0, 0, 0.65) 100%) !important;
+    }
+    .wp-block-cover__inner-container p, .wp-block-cover__inner-container h3 {
+      visibility: visible;
+      opacity: 1; // Visible on hover
+      transform: translateY(0); // Normal position on hover
+    }
+  
+  }

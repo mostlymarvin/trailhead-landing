@@ -1,0 +1,43 @@
+$levels: (
+  "100",
+  "150",
+  "200",
+  "250",
+  "300",
+  "350",
+  "400",
+  "450",
+  "500",
+);
+
+@each $level in $levels {
+
+  .minht#{$level},
+  .minht#{$level} * {
+    min-height: #{$level}px;
+  }
+  .maxht#{$level},
+  .maxht#{$level} * {
+    max-height: #{$level}px !important;
+    display:block;
+  }
+
+  img.maxht#{$level},
+  .maxht#{$level} img {
+    width: auto !important;
+    max-height: #{$level}px !important;
+    display:inline-block;
+  }
+
+ .maxht#{$level} .has-text-align-center img,
+ .maxht#{$level} .aligncenter img {
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+
+}
+
+
+.mt0 {
+  margin-top:0 !important;
+}

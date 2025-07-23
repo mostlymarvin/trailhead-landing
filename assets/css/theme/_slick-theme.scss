@@ -1,0 +1,240 @@
+@use "../theme/variables" as var;
+@use 'sass:color';
+
+$slick-font-path: "./assets/fonts/" !default;
+$slick-font-family: "slick" !default;
+$slick-loader-path: "./assets/images/" !default;
+$slick-arrow-color: var(--wp--preset--color--primary);
+$slick-dot-color: var(--wp--preset--color--primary);
+$slick-dot-color-active: $slick-dot-color !default;
+$slick-prev-character: "\2190" !default;
+$slick-next-character: "\2192" !default;
+$slick-dot-character: "\2022" !default;
+$slick-dot-size: 6px !default;
+$slick-opacity-default: 0.75 !default;
+$slick-opacity-on-hover: 1 !default;
+$slick-opacity-not-active: 0.5 !default;
+
+@function slick-image-url($url){
+@if function-exists(image-url) {
+  @return image-url($url);
+}
+
+@else {
+  @return url($slick-loader-path + $url);
+}
+}
+
+@function slick-font-url($url){
+@if function-exists(font-url) {
+  @return font-url($url);
+}
+
+@else {
+  @return url($slick-font-path + $url);
+}
+}
+
+/* Slider */
+.slick-list {
+  .slick-loading & {
+    background: #fff slick-image-url("ajax-loader.gif") center center no-repeat;
+  }
+}
+
+/* Icons */
+@if $slick-font-family =="slick" {
+  @font-face {
+    font-family: "slick";
+    src: slick-font-url("slick.eot");
+    src: slick-font-url("slick.eot?#iefix") format("embedded-opentype"), slick-font-url("slick.woff") format("woff"), slick-font-url("slick.ttf") format("truetype"), slick-font-url("slick.svg#slick") format("svg");
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+/* Arrows */
+.slick-prev,
+.slick-next {
+  position:absolute;
+  align-items:center;
+  border-radius: 50%;
+  bottom: calc( 50% - 20px );
+  background-color: var( --wp--preset--color--white) !important;
+  display:flex;
+  color: var( --wp--preset--color--primary );
+  display:flex;
+  fill: var(--wp--preset--color--primary );
+  flex-direction:column;
+  height:40px;
+  justify-content:center;
+  opacity: 1;
+  transition: all .5s;
+  transform:scale(1,1);
+  width:40px;
+  border-color:transparent !important;
+  z-index: 9 !important;
+  box-shadow: 0px 0px 10px rgba(0,0,0,.2);
+  svg {
+    height: 16px;
+    width: 16px;
+  }
+
+  &:hover {
+    cursor: pointer !important;
+    opacity:1;
+    outline: none;
+    transform:scale(1.1,1.1);
+  }
+
+  &.slick-disabled:before {
+    opacity: $slick-opacity-not-active;
+  }
+
+}
+
+.slick-prev {
+  left: 20px;
+
+  [dir="rtl"] & {
+    left: auto;
+    right: -25px;
+  }
+}
+
+.slick-next {
+  right: 20px;
+
+  [dir="rtl"] & {
+    left: -25px;
+    right: auto;
+  }
+}
+body.corporate-communications .slick-prev,
+body.corporate-communications .slick-next {
+  bottom: 40px !important;
+}
+
+/* Carousel */
+.slick-carousel {
+
+  .slick-track {
+    display: flex !important;
+  }
+
+ /* .slick-prev,
+  .slick-next {
+    align-items:center;
+    border-radius: 50%;
+    bottom: calc( 50% - 20px );
+    color: var( --wp--preset--color--primary );
+    color: var(--wp--preset--color--primary);
+    display:flex;
+    fill: var(--wp--preset--color--primary );
+    flex-direction:column;
+    height:40px;
+    justify-content:center;
+    opacity: 1;
+    transition: all .5s;
+    transform:scale(1,1);
+    width:40px;
+    z-index: 999 !important;
+    svg {
+      height: 16px;
+      width: 16px;
+    }
+
+    &:hover {
+      opacity:1;
+      transform:scale(1.1,1.1);
+    }
+  }*/
+
+  .slick-prev {
+    left: 10px;
+  }
+
+  .slick-next {
+    right: 10px;
+  }
+
+  .slick-slide {
+    border: 1px solid var(--wp--preset--color--base);
+    height: inherit !important;
+    padding: 20px;
+    aspect-ratio: 1/1;
+
+    >div {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+  }
+
+  .carousel-item {
+
+    img {
+      aspect-ratio: 1;
+      object-fit: contain;
+
+    }
+  }
+
+  &.autoplay {
+    .slick-prev, .slick-next {
+      opacity: 0;
+      transition: all .5s;
+    }
+
+    &:hover {
+      .slick-prev, .slick-next {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+/* Dots */
+.slick-dotted.slick-slider {
+  margin-bottom: 0;
+}
+
+.falls-slide-nav {
+
+  text-align: center;
+  padding: 0 !important;
+
+  li {
+    display: inline-block;
+    font-family: var(--wp--preset--font-family--montserrat);
+    font-size: var(--wp--preset--font-size--xx-small);
+    letter-spacing: .76px;
+    font-weight: 500;
+    justify-content: center;
+    list-style: none;
+    text-transform: uppercase;
+
+    a {
+      font-size: 90%;
+      display: inline-block;
+      padding: .6rem;
+      text-decoration: none;
+      cursor: pointer !important;
+    }
+
+    &.slick-active {
+      a {
+        color: var(--wp--preset--color--primary);
+      }
+
+    }
+  }
+}
+/* Overlay on single work slide: hover only.*/
+.single-work .slick-slide:hover .carousel-title {background-color: rgba( 0,0,0,.4);}
+@media all and (max-width: var.$tablet ) {
+  .single-work .slick-slide .carousel-title {background-color: rgba( 0,0,0,.4);}
+}

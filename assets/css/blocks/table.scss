@@ -1,0 +1,9 @@
+@use "../theme/variables" as var;
+
+.wp-block-table th, 
+.wp-block-table tfoot td {
+  font-family: var( --wp--preset--font-family--montserrat );
+  font-weight: 400;
+  letter-spacing:.76px;
+  text-transform:uppercase;
+}

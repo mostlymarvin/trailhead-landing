@@ -1,0 +1,38 @@
+{
+  "name": "acf/falls-subtitle",
+  "title": "Subtitle",
+  "description": "Displays a subtitle with options",
+  "version": "1.0.1",
+  "category": "formatting",
+  "icon": "heading",
+  "keywords": [
+    "title",
+    "subtitle",
+    "heading"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "./block.php"
+  },
+  "supports": {
+    "align": true,
+    "html": false,
+    "jsx": true,
+    "anchor": true,
+    "color": {
+      "text": true,
+      "background": true
+    },
+    "typography": {
+      "fontSize": true
+    },
+    "alignText": true,
+    "spacing": {
+      "margin": true,
+      "padding": true
+    },
+    "dimensions": {
+      "minHeight": true
+    }
+  }
+}

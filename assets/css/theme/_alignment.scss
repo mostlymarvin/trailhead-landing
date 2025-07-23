@@ -1,0 +1,15 @@
+@use "theme/variables" as var;
+
+
+@media (max-width: var.$mobile ) {
+
+ .aligncenter,
+ .alignleft,
+ .alignright {
+  display:block !important;
+  float: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align:center;
+ }
+}

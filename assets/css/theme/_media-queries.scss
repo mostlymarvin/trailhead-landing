@@ -1,0 +1,14 @@
+@use "../theme/variables" as var;
+
+@media all and (max-width: var.$mobile ) {
+
+  :root {
+    --wp--preset--font-size--extra-small: 1.4rem !important;
+    --wp--preset--font-size--small: 1.6rem !important;
+    --wp--preset--font-size--medium: 1.8rem !important;
+    --wp--preset--font-size--medium-plus: 2.4rem !important;
+    --wp--preset--font-size--large: 2.8rem !important;
+    --wp--preset--font-size--x-large: 4.0rem !important;
+    --wp--preset--font-size--xx-large: 6rem !important;
+  }
+}
