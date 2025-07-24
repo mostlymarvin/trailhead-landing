@@ -504,3 +504,8 @@ sup {
   font-size: 75% !important;
   line-height: 75% !important;
 }
+
+.thl-map {
+  position: relative;
+  top: 40px;
+}

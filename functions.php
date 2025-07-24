@@ -27,7 +27,6 @@ define( 'TRAILHEAD_LANDING_PATH', get_theme_file_path() );
  * @return void
  */
 function trailhead_landing_setup() {
-	add_editor_style( './assets/css/style-shared.min.css' );
 	add_editor_style( 'admin-style.css' );
 
 	/*
@@ -35,18 +34,18 @@ function trailhead_landing_setup() {
 	 * See details on how to add more styles in the readme.txt.
 	 */
 	$styled_blocks = array(
-		'button',
-		'cover',
-		'details',
-		'image',
-		'list',
+		// 'button',
+		// 'cover',
+		// 'details',
+		// 'image',
+		// 'list',
 		'navigation',
-		'post-content',
-		'quote',
-		'search',
-		'table',
-		'group',
-		'post-author',
+		// 'post-content',
+		// 'quote',
+		// 'search',
+		// 'table',
+		// 'group',
+		// 'post-author',
 	);
 	foreach ( $styled_blocks as $block_name ) {
 		$args = array(

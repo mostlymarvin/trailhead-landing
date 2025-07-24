@@ -177,7 +177,7 @@
         {
           "fluid": true,
           "name": "XL",
-          "size": "clamp( 3.8rem, 6rem, 6rem )",
+          "size": "clamp( 5rem, 5rem, 5rem )",
           "slug": "x-large"
         },
         {
