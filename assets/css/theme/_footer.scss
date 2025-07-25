@@ -1,9 +1,0 @@
-@use "theme/variables" as var;
-
-//prevents too much vert space on small screens between colophon nav items
-@media (max-width: var.$small) {
-    .wp-container-core-group-is-layout-35,
-    nav.wp-container-core-navigation-is-layout-3 {
-        gap: var(--wp--preset--spacing--20);
-    }
-}

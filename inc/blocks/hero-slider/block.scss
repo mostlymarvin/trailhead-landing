@@ -1,0 +1,10 @@
+@use "../../../assets/css/theme/variables" as var;
+@use 'scss/slick';
+@use 'scss/slick-theme';
+
+.wp-block-acf-hero-slider {
+
+  margin-top:0 !important;
+  //max-height:680px;
+  overflow:hidden;
+}

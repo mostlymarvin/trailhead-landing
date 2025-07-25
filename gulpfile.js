@@ -26,15 +26,6 @@ gulp.task( 'watch', function () {
 	);
 } );
 
-gulp.task( 'clean-shared', function () {
-	return gulp
-		.src( 'assets/css/style-shared.min.css', {
-			read: false,
-			allowEmpty: true,
-		} )
-		.pipe( clean() );
-} );
-
 gulp.task( 'clean-blocks', function () {
 	return gulp
 		.src( 'assets/css/blocks/*.min.css', {
@@ -54,14 +45,7 @@ gulp.task('clean-custom-blocks', function () {
     .pipe(clean());
 });
 
-gulp.task( 'minify-shared', function () {
-	return gulp
-		.src( 'assets/css/*.css' )
-		.pipe( concatCss( 'style-shared.min.css' ) )
-		//.pipe( postcss( cssnano() ) )
-    .pipe(gulpnano())
-		.pipe( gulp.dest( 'assets/css/' ) );
-} );
+
 /*
 gulp.task( 'minify-blocks', function () {
 	return gulp
@@ -122,9 +106,7 @@ gulp.task("scripts", function() {
 gulp.task(
 	'default',
 	gulp.series(
-		'clean-shared',
 		'clean-blocks',
-		'minify-shared',
 		'minify-blocks',
     'clean-custom-blocks',
     'minify-custom-blocks',

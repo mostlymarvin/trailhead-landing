@@ -5,7 +5,7 @@ html {
   font-size: 10px !important; /* Easier Math */
 }
 body {
-  font-size:1.4rem;
+  font-size: var(--wp--preset--font-size--medium ) !important;
 }
 body, body * {
   box-sizing:border-box;

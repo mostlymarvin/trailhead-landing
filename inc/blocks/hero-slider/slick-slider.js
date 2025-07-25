@@ -1,0 +1,27 @@
+jQuery(function ($) {
+
+  $(document).ready(function () {
+
+    let args = {
+      dots: true,
+      infinite: true,
+      slidesToScroll: 1,
+      slidesToShow: 1,
+      prevArrow: "<button type='button' class='slick-prev pull-left'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 640'><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d='M201.4 297.4C188.9 309.9 188.9 330.2 201.4 342.7L361.4 502.7C373.9 515.2 394.2 515.2 406.7 502.7C419.2 490.2 419.2 469.9 406.7 457.4L269.3 320L406.6 182.6C419.1 170.1 419.1 149.8 406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3L201.3 297.3z'/></svg></button>",
+      nextArrow: "<button type='button' class='slick-next pull-right'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 640'><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d='M201.4 297.4C188.9 309.9 188.9 330.2 201.4 342.7L361.4 502.7C373.9 515.2 394.2 515.2 406.7 502.7C419.2 490.2 419.2 469.9 406.7 457.4L269.3 320L406.6 182.6C419.1 170.1 419.1 149.8 406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3L201.3 297.3z'/></svg></button>",
+      speed: 500,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      fade: true
+    }
+
+     $('.wp-block-acf-hero-slider').slick(args);
+    //$(".wp-block-acf-hero-slider").each(() => {
+
+      //$('.wp-block-acf-hero-slider').slick();
+    //});
+//
+  });
+});
+
+

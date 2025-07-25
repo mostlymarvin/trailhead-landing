@@ -1,0 +1,123 @@
+@use "../../../assets/css/theme/variables" as var;
+@use 'sass:color';
+
+/* Slider */
+.slick-list {
+  line-height:0;
+}
+
+/* Arrows */
+.slick-hero .slick-prev,
+.slick-hero .slick-next {
+  position:absolute;
+  padding:0;
+  align-items:center;
+  border-radius: 50%;
+  bottom: 5%;
+  background-color: var( --wp--preset--color--transparent ) !important;
+  display:flex;
+  color: var( --wp--preset--color--white );
+  display:flex;
+  fill: var(--wp--preset--color--white );
+  flex-direction:column;
+  height:35px;
+  justify-content:center;
+  opacity: 1;
+  transition: all .5s;
+  transform:scale(1,1);
+  width:35px;
+  border-color:transparent !important;
+  z-index: 9 !important;
+  box-shadow:none;
+  svg {
+    height: 25px;
+    width: 25px;
+  }
+
+  &:hover {
+    cursor: pointer !important;
+    opacity:1;
+    outline: none;
+  }
+}
+.slick-hero .slick-next {
+  transform:rotate(180deg);
+}
+
+.slick-prev {
+  left: 40%;
+
+  [dir="rtl"] & {
+    left: auto;
+    right: -25px;
+  }
+}
+
+.slick-next {
+  right: 40%;
+
+  [dir="rtl"] & {
+    left: -25px;
+    right: auto;
+  }
+}
+
+@media (max-width: var.$mobile ) {
+
+  .slick-prev {
+    left: 30%;
+  }
+  .slick-next {
+    right:30%;
+  }
+}
+
+/* Dots */
+
+.slick-dotted.slick-slider {
+    margin-bottom: 0;
+}
+
+.slick-hero .slick-dots {
+    position: absolute;
+    height:35px;
+    bottom: 5%;
+    list-style: none;
+    display: block;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    
+    li {
+        position: relative;
+        display: inline-block;
+        height: 10px;
+        width: 10px;
+        margin: 0 3px;
+        padding: 0;
+        cursor: pointer;
+        button {
+            border: 1px solid var( --wp--preset--color--white );
+            background: var( --wp--preset--color--white );
+            border-radius: 50%;
+            display: block;
+            height: 10px;
+            width: 10px;
+            outline: none;
+            opacity: .5;
+            line-height: 0px;
+            font-size: 0px;
+            color: transparent;
+            padding: 5px;
+            cursor: pointer;
+            &:hover, &:focus {
+                outline: none;
+            }
+        }
+        &.slick-active button {
+            background: var( --wp--preset--color--navy );
+            opacity:1;
+        }
+    }
+}

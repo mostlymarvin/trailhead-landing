@@ -1,0 +1,43 @@
+{
+  "name": "acf/hero-slider",
+  "title": "Hero Slider",
+  "description": "Displays a slider of hero images",
+  "version": "1.0.1",
+  "style": [
+    "file:./block.min.css"
+  ],
+  "viewStyle": [
+    "file:./block.min.css"
+  ],
+  "category": "formatting",
+  "icon": "format-gallery",
+  "keywords": [
+    "carousel",
+    "slick",
+    "brand"
+  ],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "./block.php"
+  },
+  "supports": {
+    "align": true,
+    "html": false,
+    "jsx": true,
+    "anchor": true,
+    "color": {
+      "text": true,
+      "background": true
+    },
+    "alignText": true,
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "script": [
+    "jquery",
+    "file:../shared/slick.js",
+    "file:./slick-slider.js"
+  ]
+}

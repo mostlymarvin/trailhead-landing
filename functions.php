@@ -34,18 +34,7 @@ function trailhead_landing_setup() {
 	 * See details on how to add more styles in the readme.txt.
 	 */
 	$styled_blocks = array(
-		// 'button',
-		// 'cover',
-		// 'details',
-		// 'image',
-		// 'list',
 		'navigation',
-		// 'post-content',
-		// 'quote',
-		// 'search',
-		// 'table',
-		// 'group',
-		// 'post-author',
 	);
 	foreach ( $styled_blocks as $block_name ) {
 		$args = array(
@@ -75,12 +64,6 @@ function trailhead_landing_styles() {
 		array(),
 		TRAILHEAD_LANDING_VERSION
 	);
-	wp_enqueue_style(
-		'trailhead-landing-shared-styles',
-		get_template_directory_uri() . '/assets/css/style-shared.min.css',
-		array(),
-		TRAILHEAD_LANDING_VERSION
-	);
 }
 
 function trailhead_landing_editor_styles() {
@@ -92,49 +75,9 @@ function trailhead_landing_editor_styles() {
 	);
 }
 
-function trailhead_landing_scripts() {
-	wp_enqueue_script(
-		'slick',
-		get_template_directory_uri() . '/assets/js/dist/slick.min.js',
-		array( 'jquery' ),
-		TRAILHEAD_LANDING_VERSION,
-		true
-	);
-	wp_enqueue_script(
-		'slick-falls',
-		get_template_directory_uri() . '/assets/js/dist/slick-slider.min.js',
-		array( 'jquery', 'slick' ),
-		TRAILHEAD_LANDING_VERSION,
-		true
-	);
-	wp_enqueue_script(
-		'site-falls',
-		get_template_directory_uri() . '/assets/js/dist/site.min.js',
-		array(),
-		TRAILHEAD_LANDING_VERSION,
-		true
-	);
-
-	// Register script for blog navigation - will be enqueued in shortcode.
-	wp_register_script(
-		'blog-navigation',
-		get_stylesheet_directory_uri() . '/assets/js/dist/blog-nav.min.js',
-		array( 'jquery' ),
-		null,
-		true
-	);
-}
-
 add_action( 'admin_enqueue_scripts', 'trailhead_landing_editor_styles' );
-add_action( 'admin_enqueue_scripts', 'trailhead_landing_scripts' );
 add_action( 'wp_enqueue_scripts', 'trailhead_landing_styles' );
-add_action( 'wp_enqueue_scripts', 'trailhead_landing_scripts' );
 
-// Shortcodes
-// require_once get_theme_file_path( 'inc/shortcodes.php' );
 
 // Blocks
-// require_once get_theme_file_path( 'inc/register-blocks.php' );
-
-// Filters.
-// require_once get_theme_file_path( 'inc/filters.php' );
+require_once get_theme_file_path( 'inc/register-blocks.php' );
